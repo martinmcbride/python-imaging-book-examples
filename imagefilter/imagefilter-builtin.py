@@ -4,7 +4,7 @@
 # License: MIT
 
 # Use the built in filters. These filters have no parameters
-# Create
+# Create a final image with all the filters.
 
 from PIL import Image, ImageFilter, ImageDraw, ImageFont
 
