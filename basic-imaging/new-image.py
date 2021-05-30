@@ -7,7 +7,7 @@
 
 from PIL import Image, ImageColor
 
-image = Image.new('RGB', (400, 300), ImageColor.getrgb('gold'))
+image = Image.new('RGB', (400, 300), 'gold')
 image.show()
 
 image.save("gold.png")
