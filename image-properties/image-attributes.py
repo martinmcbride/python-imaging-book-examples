@@ -24,12 +24,12 @@ print(" gif_image", getattr(gif_image, "format", None))      # 'GIF'
 print("Mode:")
 print(" new_image", new_image.mode)                          # 'L'
 print(" jpeg_image", jpeg_image.mode)                        # 'RGB'
-print(" file_image", jpeg_image.mode)                        # 'RGB'
+print(" gif_image", gif_image.mode)                          # 'P'
 
 print("Bands:")
 print(" new_image", new_image.getbands())                    # ('L',)
 print(" jpeg_image", jpeg_image.getbands())                  # ('R', 'G', 'B')
-print(" file_image", jpeg_image.getbands())                  # ('R', 'G', 'B')
+print(" gif_image", gif_image.getbands())                    # ('P',)
 
 print("Size:")
 print(" new_image", new_image.size)                          # (400, 300)
