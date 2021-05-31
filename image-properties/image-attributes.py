@@ -5,7 +5,7 @@
 
 # Print the attributes of different types of images
 
-from PIL import Image, ImageColor
+from PIL import Image
 
 new_image = Image.new('L', (400, 300), 'darkgrey')
 jpeg_image = Image.open('boat.jpg')
@@ -14,17 +14,22 @@ gif_image = Image.open('spinning-cube-ani.gif')
 print("File name:")
 print(" new_image", getattr(new_image, "filename", None))    # None
 print(" jpeg_image", getattr(jpeg_image, "filename", None))  # 'boat.jpg'
-print(" gif_image", getattr(gif_image, "filename", None))    # 'boat.gif'
+print(" gif_image", getattr(gif_image, "filename", None))    # 'spinning-cube-ani.gif'
 
 print("File format:")
 print(" new_image", getattr(new_image, "format", None))      # None
 print(" jpeg_image", getattr(jpeg_image, "format", None))    # 'JPEG'
-print(" gif_image", getattr(gif_image, "format", None))      # 'JPEG'
+print(" gif_image", getattr(gif_image, "format", None))      # 'GIF'
 
 print("Mode:")
 print(" new_image", new_image.mode)                          # 'L'
 print(" jpeg_image", jpeg_image.mode)                        # 'RGB'
 print(" file_image", jpeg_image.mode)                        # 'RGB'
+
+print("Bands:")
+print(" new_image", new_image.getbands())                    # ('L',)
+print(" jpeg_image", jpeg_image.getbands())                  # ('R', 'G', 'B')
+print(" file_image", jpeg_image.getbands())                  # ('R', 'G', 'B')
 
 print("Size:")
 print(" new_image", new_image.size)                          # (400, 300)
@@ -47,9 +52,9 @@ print(" jpeg_image", jpeg_image.palette)                     # None
 print(" gif_image", gif_image.palette)                       # <ImagePalette>
 
 print("Info:")
-print(" new_image", new_image.info)                       # None
-print(" jpeg_image", jpeg_image.info)                     # {various}
-print(" gif_image", gif_image.info)                       # {various}
+print(" new_image", new_image.info)                          # None
+print(" jpeg_image", jpeg_image.info)                        # {various}
+print(" gif_image", gif_image.info)                          # {various}
 
 print("Frames:")
 print(" new_image", getattr(new_image, "n_frames", None))    # None
