@@ -5,7 +5,7 @@
 
 # Draw shapes with Pillow
 
-from PIL import Image, ImageDraw
+from PIL import Image, ImageDraw, ImageFont
 
 # Rectangles
 image = Image.open('boat-small.jpg')
@@ -18,7 +18,7 @@ draw.rectangle((300, 50, 350, 200), fill='white', outline='black', width=10)
 image.save('imagedraw-rectangles.jpg')
 
 # Other shapes
-image = Image.new('RGB', (600, 400), 'lightgray')
+image = Image.new('RGB', (600, 400), 'lightgrey')
 
 draw = ImageDraw.Draw(image)
 draw.line((50, 50, 100, 150), fill='red', width=6)
@@ -31,3 +31,4 @@ draw.chord((400, 200, 550, 350), start=90, end=200, fill='cyan')
 draw.pieslice((500, 200, 650, 350), start=90, end=200, fill='magenta')
 
 image.save('imagedraw-shapes.png')
+
