@@ -8,15 +8,26 @@
 from PIL import Image, ImageDraw, ImageFont
 
 # Text align
-image = Image.new('RGB', (600, 400), 'lightgray')
+image = Image.new('RGB', (400, 350), 'lightgray')
 
 font = ImageFont.truetype('arial.ttf', 30)
 
 draw = ImageDraw.Draw(image)
 
-draw.line((0, 75, 600, 75), fill='blue', width=2)
-draw.text((50, 75), 'Align a', anchor='la', font=font, fill='red')
-draw.text((150, 75), 'Align t', anchor='lt', font=font, fill='red')
-draw.text((250, 75), 'Align m', anchor='lm', font=font, fill='red')
+x, y = 50, 75
+draw.ellipse((x-5, y-5, x+5, y+5), fill='blue')
+draw.text((x, y), 'Align la', anchor='la', font=font, fill='red')
+
+x, y = 50, 150
+draw.ellipse((x-5, y-5, x+5, y+5), fill='blue')
+draw.text((x, y), 'Align ls', anchor='ls', font=font, fill='red')
+
+x, y = 150, 225
+draw.ellipse((x-5, y-5, x+5, y+5), fill='blue')
+draw.text((x, y), 'Align mt', anchor='mt', font=font, fill='red')
+
+x, y = 250, 300
+draw.ellipse((x-5, y-5, x+5, y+5), fill='blue')
+draw.text((x, y), 'Align rm', anchor='rm', font=font, fill='red')
 
 image.save('imagedraw-textanchor.png')
