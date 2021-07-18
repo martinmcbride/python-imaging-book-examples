@@ -36,3 +36,9 @@ mixed_image.save('mixed_component.png')
 blank = Image.new('L', image.size)
 red_sep = Image.merge('RGB', [red_image, blank, blank])
 red_sep.save('red_sep.png')
+
+# Add an alpha channel to the image
+
+vignette_image = Image.open('vignette.png').getchannel(0)
+image.putalpha(vignette_image)
+image.save('image_putalpha.png')
