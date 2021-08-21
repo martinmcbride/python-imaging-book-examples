@@ -4,8 +4,10 @@
 # License: MIT
 
 # Print the statistics of an image
+# matplotlib is only used to plot the histogram, comment it out of you don't want to use it.
 
 from PIL import Image, ImageStat
+import matplotlib.pyplot as plot
 
 jpeg_image = Image.open('boat.jpg')
 
@@ -20,6 +22,9 @@ greyscale_image = jpeg_image.convert('L')
 histogram = greyscale_image.histogram()
 print("Histogram length:", len(histogram))  # 256
 print("Histogram:", histogram)              # [0, 0, 0, ... 41]
+
+plot.plot(histogram)
+plot.savefig("histogram.png")
 
 ## Other image stats
 print("Extrema:", jpeg_image.getextrema())  # ((2, 255), (0, 255), (0, 255))
