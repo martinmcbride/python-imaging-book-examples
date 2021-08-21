@@ -7,8 +7,8 @@
 
 from PIL import Image, ExifTags
 
-gif_image = Image.open('boat.jpg')
-exif = gif_image.getexif()
+jpeg_image = Image.open('boat.jpg')
+exif = jpeg_image.getexif()
 for tag in exif:
     tagname = ExifTags.TAGS[tag]
     value = exif[tag]
