@@ -27,8 +27,9 @@ plot.plot(histogram)
 plot.savefig("histogram.png")
 
 ## Other image stats
-print("Extrema:", jpeg_image.getextrema())  # ((2, 255), (0, 255), (0, 255))
-print("Entropy:", jpeg_image.entropy())     # 9.21637999047619
+print("Extrema:", greyscale_image.getextrema())  # (4, 255)
+print("Extrema:", jpeg_image.getextrema())       # ((2, 255), (0, 255), (0, 255))
+print("Entropy:", jpeg_image.entropy())          # 9.21637999047619
 
 ## ImageStat module
 
